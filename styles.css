@@ -1,0 +1,144 @@
+/* Default css file for markdown to html conversion */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 2em;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+p {
+    text-align: justify;
+}
+
+#layout-menu {
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    padding: 2em 1em;
+    border-right: 1px solid #e0e0e0;
+    background: #f8f8f8;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+
+#layout-content {
+    margin-left: 220px;
+    max-width: 1000px;
+    padding: 0 2em;
+}
+
+a {
+    color: #022b6d;
+    text-decoration: none;
+    word-break: keep-all;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+a:hover {
+    border-bottom: 1px gray dotted;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+pre {
+    padding: 0;
+    margin: 0;
+    overflow: scroll;
+}
+
+div#footer {
+    font-size: small;
+    border-top: 1px solid #c0c0c0;
+    padding-top: 0.1em;
+    margin-top: 4.0em;
+    color: #c0c0c0;
+}
+
+div#footer a {
+    color: #80a0b0;
+}
+
+div.codeblock, div.infoblock {
+    margin-right: 0%;
+    margin-top: 1.2em;
+    margin-bottom: 1.3em;
+}
+
+div.blocktitle {
+    font-weight: bold;
+    color: #cd7b62;
+    margin-top: 1.2em;
+    margin-bottom: 0.1em;
+}
+
+div.blockcontent {
+    border: 1px solid silver;
+    padding: 0.3em 0.5em;
+}
+
+div.infoblock > div.blockcontent {
+    background: #ffffee;
+}
+
+div.codeblock > div.blockcontent {
+    background: #f6f6f6;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+img {
+    max-width: 200px !important;
+    height: auto;
+    border-radius: 50%;
+    float: left;
+    margin: 0 1.5em 1em 0;
+    shape-outside: circle();
+}
+
+@media print {
+    #layout-menu {
+        display: none;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    a:hover {
+        border-bottom: none;
+    }
+}

@@ -1,5 +1,5 @@
 # Your Name
-![Profile Picture](../image/cyborg.jpg)
+![Profile Picture](./src/image/cyborg.jpg)
 ## About Me
 Hello! I'm a passionate developer who loves building things. This is my personal website.
 

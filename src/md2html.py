@@ -1,6 +1,7 @@
 import markdown
 import os
 from pathlib import Path
+import shutil
 
 # Global HTML template
 HTML_TEMPLATE = """<!DOCTYPE html>
@@ -50,8 +51,10 @@ def generate_menu_items(pages):
 
 def process_md_files():
     """Process all markdown files in ./md directory"""
-    md_dir = Path('./md')
-    output_dir = Path('./html')
+    md_dir = Path('./src/md')
+    output_dir = Path('./src/html')  # Changed back to html directory
+    
+    # Create output directory if it doesn't exist
     output_dir.mkdir(exist_ok=True)
     
     # Get all markdown files
@@ -87,12 +90,11 @@ def process_md_files():
         except Exception as e:
             print(f"Error processing {md_file}: {str(e)}")
     
-    # Copy styles.css if it doesn't exist
+    # Copy styles.css to output directory
     css_file = output_dir / 'styles.css'
     if not css_file.exists():
         try:
-            with open('styles.css', 'r') as src, open(css_file, 'w') as dest:
-                dest.write(src.read())
+            shutil.copy('styles.css', css_file)
             print("Copied styles.css to output directory")
         except Exception as e:
             print(f"Error copying styles.css: {str(e)}")
@@ -108,10 +110,9 @@ if __name__ == "__main__":
 # 3. Run the script:
 #    python mdtohtml.py
 # 4. The script will:
-#    - Create an 'html' directory if it doesn't exist
-#    - Convert all markdown files to HTML
+#    - Convert all markdown files to HTML in the html directory
 #    - Create a navigation menu linking all pages
-#    - Copy styles.css to the output directory
+#    - Copy styles.css to the html directory
 # 5. Open the generated HTML files in your browser:
 #    - Start with index.html
 #    - Use the menu to navigate between pages
